@@ -31,11 +31,14 @@ function Job_Home() {
 
   //handle input change
   const [query, setquery] = useState("");
+  const [locationQuery, setLocationQuery] = useState("");
   const handleInputChange = (event) => {
     setquery(event.target.value);
     console.log(query);
   };
-
+  const handleLocationChange = (event) => {
+    setLocationQuery(event.target.value);
+  };
   //filter jobs by title
   const filterdItems = jobs.filter(
     (job) => job.jobTitle.toLowerCase().indexOf(query.toLowerCase()) !== -1
@@ -72,6 +75,12 @@ function Job_Home() {
       setCurrentPage(currentPage-1)
     }
   }
+  // filter jobs by location
+  const filterDataByLocation = (jobs, locationQuery) => {
+    return jobs.filter((job) =>
+      job.jobLocation.toLowerCase().includes(locationQuery.toLowerCase())
+    );
+  };
 
   //main function
   const filterdData = (jobs, selected, query) => {
@@ -101,6 +110,9 @@ function Job_Home() {
       );
       console.log(filterdJobs);
     }
+    filterdJobs = filterDataByLocation(filterdJobs, locationQuery);
+
+
     //slice the data based on current page
     const {startIndex,endIndex} = calculatePageRange();
     filterdJobs = filterdJobs.slice(startIndex,endIndex)
@@ -112,7 +124,8 @@ function Job_Home() {
   return (
     <>
       <div className="container1">
-        <Banner query={query} handleInputChange={handleInputChange} />
+        <Banner query={query} handleInputChange={handleInputChange}  query1={locationQuery}
+   handleLocationChange={handleLocationChange} />
       </div>
       <div className="maindiv">
         {/*left side */}
@@ -140,8 +153,7 @@ function Job_Home() {
 
         </div>
 
-        {/*right side */}
-        <div className="right bg-white rounded">right</div>
+        
       </div>
     </>
   );

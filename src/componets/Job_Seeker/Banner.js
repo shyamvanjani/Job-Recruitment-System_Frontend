@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {FiMapPin, FiSearch } from "react-icons/fi";
 import "./Styles/job.css";
 
-function Banner({query,handleInputChange}) {
+function Banner({query,handleInputChange,handleInputChange1,query1,handleLocationChange}) {
 
   return (
     <div>
@@ -30,6 +30,8 @@ function Banner({query,handleInputChange}) {
             name="title"
             id="title"
             placeholder="Location"
+            onChange={handleLocationChange}
+            value={query1}
             
           />
           <FiMapPin className="search-icon search-icon-right"/>
