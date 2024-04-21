@@ -159,7 +159,7 @@ export default function Company_view(props) {
                 <div className="button-container">
                   <button
                     className="button button-green"
-                    style={{ background: "green" }}
+                    style={{ background: "green",marginBottom:"20px" }}
                     onClick={Approve}
                   >
                     {loading ? "Loading..." : "Approve"}

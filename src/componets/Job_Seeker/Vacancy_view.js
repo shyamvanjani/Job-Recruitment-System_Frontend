@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
 export default function Vacancy_view(props) {
   var [data, setData] = useState();
   var [company, setCompanyData] = useState();

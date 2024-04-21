@@ -48,19 +48,19 @@ export default function Job_Seeker_Navbar() {
           <span>Job Recruitment System</span>
         </div>
         <ul className="navbar-menu">
-          <li
+          {/* <li
             className={selectedField === 'Job_Home' ? 'active' : ''}
             onClick={() => handleItemClick('Job_Home')}
           >
             <i className="fa fa-home"></i>
             <span>Dashboard</span>
-          </li>
+          </li> */}
           <li
             className={selectedField === 'Dashboard' ? 'active' : ''}
             onClick={() => handleItemClick('Dashboard')}
           >
-            <i className="fa fa-home"></i>
-            <span>Blog</span>
+           <i class="fa fa-home"></i>
+            <span>Dashboard</span>
           </li>
           <li
             className={selectedField === 'Appliers' ? 'active' : ''}
