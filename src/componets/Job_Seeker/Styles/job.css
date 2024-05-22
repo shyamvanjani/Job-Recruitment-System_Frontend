@@ -606,3 +606,7 @@ h3{
 .dark{
   font-weight: 500;
 }
+
+.input-bx10 input{
+  border-radius: 5px;
+}

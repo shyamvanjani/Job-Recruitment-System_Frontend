@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "./Styles/job.css"
 
 export default function Vacancy_view(props) {
   var [data, setData] = useState();
@@ -169,7 +170,7 @@ export default function Vacancy_view(props) {
                   </p>
                   <p className="font-italic mb-1">
                     <i class="fa fa-asterisk" aria-hidden="true"></i>
-                    <b>Number Of Vacancies:-{vacancy1}</b>
+                    <b style={{color:"black"}}>Number Of Vacancies:-{vacancy1}</b>
                   </p>
                   <p className="font-italic mb-1">
                     <i class="fa fa-asterisk" aria-hidden="true"></i>
@@ -288,13 +289,13 @@ export default function Vacancy_view(props) {
                     aria-hidden="true"
                     style={iconstyle1}
                   ></i>
-                  <div className="input-bx" style={emailfield}>
+                  <div className="input-bx10" style={emailfield}>
                     <input
                       type="number"
                       required="required"
                       onChange={vacancy_Update}
                       value={vacancy}
-                    />
+                    /><br></br>
                     <span className="span-text">Number of Vacancy</span>
                   </div>
                   <button
